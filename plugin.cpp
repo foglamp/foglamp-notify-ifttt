@@ -31,7 +31,7 @@
 				"\"order\" : \"1\", \"displayName\" : \"IFTTT Trigger\"}," \
 			"\"key\" : {\"description\" : \"IFTTT maker key\", " \
 				"\"type\" : \"string\", " \
-				"\"default\" : \"3TwfrE-KSEqlaP2kFmgx_7F8ZBP1KxRKW9y6-t8knT\", " \
+				"\"default\" : \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\", " \
 				"\"order\" : \"2\", \"displayName\" : \"IFTTT Key\"} }" \
 
 using namespace std;
