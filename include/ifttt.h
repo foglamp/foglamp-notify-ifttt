@@ -3,6 +3,7 @@
 #include <config_category.h>
 #include <string>
 #include <logger.h>
+#include <mutex>
 
 /**
  * A simple IFTTT notification class that sends a message
@@ -19,5 +20,6 @@ class IFTTT {
 	private:
 		std::string	m_key;
 		std::string	m_trigger;
+		std::mutex	m_mutex;
 };
 #endif

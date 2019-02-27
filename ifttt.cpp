@@ -15,7 +15,6 @@
 using namespace std;
 using namespace rapidjson;
 
-
 /**
  * Construct a IFTTT notification plugin
  *
@@ -45,8 +44,7 @@ void IFTTT::notify(const string& notificationName, const string& triggerReason, 
 {
 SimpleHttps	https("maker.ifttt.com");
 
-
-
+	lock_guard<mutex> guard(m_mutex);
 	std::vector<std::pair<std::string, std::string>> headers;
 	pair<string, string> header = make_pair("Content-type", "application/json");
 	headers.push_back(header);
@@ -69,6 +67,7 @@ SimpleHttps	https("maker.ifttt.com");
 void IFTTT::reconfigure(const string& newConfig)
 {
 	ConfigCategory category("new", newConfig);
+	lock_guard<mutex> guard(m_mutex);
 	m_key = category.getValue("key");
 	m_trigger = category.getValue("trigger");
 }
