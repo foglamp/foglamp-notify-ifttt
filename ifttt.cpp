@@ -52,10 +52,16 @@ SimpleHttps	https("maker.ifttt.com");
 	string url = "https://maker.ifttt.com/trigger/" + m_trigger + "/with/key/" + m_key;
 
 	Logger::getLogger()->debug("POST IFTTT notification to %s", url.c_str());
-	int errorCode;
-	if ((errorCode = https.sendRequest("POST", url, headers, "")) != 200 && errorCode != 202)
-	{
-		Logger::getLogger()->error("Failed to send notification to IFTTT %s, errorCode %d", url.c_str(), errorCode);
+	try {
+		int errorCode;
+		if ((errorCode = https.sendRequest("POST", url, headers, "")) != 200 && errorCode != 202)
+		{
+			Logger::getLogger()->error("Failed to send notification to IFTTT %s, errorCode %d", url.c_str(), errorCode);
+		}
+	} catch (exception& e) {
+		Logger::getLogger()->error("IFTTT notification failed: %s", e.what());
+	} catch (...) {
+		Logger::getLogger()->error("IFTTT notification failed.");
 	}
 }
 
