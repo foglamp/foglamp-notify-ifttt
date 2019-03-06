@@ -34,6 +34,7 @@ To build FogLAMP "IFTTT notification" C++ plugin:
 
 .. code-block:: console
 
+  $ sh ./requirements.sh
   $ mkdir build
   $ cd build
   $ cmake ..
