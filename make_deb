@@ -23,7 +23,7 @@ set -e
 
 architecture="none"
 plugin_type="notify"
-plugin_type_install="notify"
+plugin_type_install="notificationDelivery"
 plugin_name="ifttt"
 plugin_install_dirname=${plugin_name}
 usage="$(basename "$0") [help|clean|cleanall]
