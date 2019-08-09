@@ -96,6 +96,7 @@ bool plugin_deliver(PLUGIN_HANDLE handle,
 							deliveryName.c_str(), notificationName.c_str(), triggerReason.c_str(), message.c_str());
 	IFTTT *ifttt = (IFTTT *)handle;
 	ifttt->notify(notificationName, triggerReason, message);
+	return true;
 }
 
 /**
