@@ -1,5 +1,5 @@
 /*
- * FogLAMP "ifttt" notification plugin.
+ * Fledge "ifttt" notification plugin.
  *
  * Copyright (c) 2019 Dianomic Systems
  *

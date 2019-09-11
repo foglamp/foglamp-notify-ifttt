@@ -1,5 +1,5 @@
 /*
- * FogLAMP "IFTTT" notification delivery plugin.
+ * Fledge "IFTTT" notification delivery plugin.
  *
  * Copyright (c) 2019 Dianomic Systems
  *
